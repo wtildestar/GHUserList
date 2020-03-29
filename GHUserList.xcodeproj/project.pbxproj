@@ -14,6 +14,19 @@
 		D76818D3242E7C8F00F45DFE /* GHUserList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D76818D1242E7C8F00F45DFE /* GHUserList.xcdatamodeld */; };
 		D76818D5242E7C9200F45DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D76818D4242E7C9200F45DFE /* Assets.xcassets */; };
 		D76818D8242E7C9200F45DFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76818D6242E7C9200F45DFE /* LaunchScreen.storyboard */; };
+		D76818E0242E801300F45DFE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818DF242E801300F45DFE /* Router.swift */; };
+		D76818E7242EC1AB00F45DFE /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818E6242EC1AB00F45DFE /* Follower.swift */; };
+		D76818E9242EC84000F45DFE /* AssemblyModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818E8242EC84000F45DFE /* AssemblyModelBuilder.swift */; };
+		D76818EB242F4D5C00F45DFE /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818EA242F4D5C00F45DFE /* MainPresenter.swift */; };
+		D76818ED242F565E00F45DFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818EC242F565E00F45DFE /* User.swift */; };
+		D76818EF242F56D400F45DFE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818EE242F56D400F45DFE /* NetworkService.swift */; };
+		D76818F2242F6A2000F45DFE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818F0242F6A1F00F45DFE /* MainViewController.swift */; };
+		D76818F3242F6A2000F45DFE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76818F1242F6A2000F45DFE /* MainViewController.xib */; };
+		D76818FC242F926400F45DFE /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818FB242F926400F45DFE /* DetailPresenter.swift */; };
+		D76818FF242F984800F45DFE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818FD242F984800F45DFE /* DetailViewController.swift */; };
+		D7681900242F984800F45DFE /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76818FE242F984800F45DFE /* DetailViewController.xib */; };
+		D7681908242F9C7B00F45DFE /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7681906242F9C7B00F45DFE /* DetailCollectionViewCell.swift */; };
+		D7681909242F9C7B00F45DFE /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7681907242F9C7B00F45DFE /* DetailCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +39,19 @@
 		D76818D4242E7C9200F45DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D76818D7242E7C9200F45DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D76818D9242E7C9200F45DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D76818DF242E801300F45DFE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D76818E6242EC1AB00F45DFE /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		D76818E8242EC84000F45DFE /* AssemblyModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModelBuilder.swift; sourceTree = "<group>"; };
+		D76818EA242F4D5C00F45DFE /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		D76818EC242F565E00F45DFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D76818EE242F56D400F45DFE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D76818F0242F6A1F00F45DFE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D76818F1242F6A2000F45DFE /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		D76818FB242F926400F45DFE /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		D76818FD242F984800F45DFE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D76818FE242F984800F45DFE /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		D7681906242F9C7B00F45DFE /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		D7681907242F9C7B00F45DFE /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +84,117 @@
 		D76818C7242E7C8F00F45DFE /* GHUserList */ = {
 			isa = PBXGroup;
 			children = (
+				D76818DF242E801300F45DFE /* Router.swift */,
+				D76818E8242EC84000F45DFE /* AssemblyModelBuilder.swift */,
+				D76818E1242E811C00F45DFE /* MainModule */,
+				D76818F7242F8FCD00F45DFE /* DetailModule */,
+				D76818F6242F8C0800F45DFE /* Supporting files */,
+				D76818D9242E7C9200F45DFE /* Info.plist */,
+				D76818D1242E7C8F00F45DFE /* GHUserList.xcdatamodeld */,
+			);
+			path = GHUserList;
+			sourceTree = "<group>";
+		};
+		D76818E1242E811C00F45DFE /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				D76818E2242E812400F45DFE /* Model */,
+				D76818E3242E813600F45DFE /* View */,
+				D76818E4242E813A00F45DFE /* Presenter */,
+				D76818E5242E814800F45DFE /* ServiceLayer */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		D76818E2242E812400F45DFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D76818EC242F565E00F45DFE /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D76818E3242E813600F45DFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D76818F0242F6A1F00F45DFE /* MainViewController.swift */,
+				D76818F1242F6A2000F45DFE /* MainViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D76818E4242E813A00F45DFE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D76818EA242F4D5C00F45DFE /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D76818E5242E814800F45DFE /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D76818EE242F56D400F45DFE /* NetworkService.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		D76818F6242F8C0800F45DFE /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
 				D76818C8242E7C8F00F45DFE /* AppDelegate.swift */,
 				D76818CA242E7C8F00F45DFE /* SceneDelegate.swift */,
 				D76818CC242E7C8F00F45DFE /* ViewController.swift */,
 				D76818CE242E7C8F00F45DFE /* Main.storyboard */,
 				D76818D4242E7C9200F45DFE /* Assets.xcassets */,
 				D76818D6242E7C9200F45DFE /* LaunchScreen.storyboard */,
-				D76818D9242E7C9200F45DFE /* Info.plist */,
-				D76818D1242E7C8F00F45DFE /* GHUserList.xcdatamodeld */,
 			);
-			path = GHUserList;
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		D76818F7242F8FCD00F45DFE /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				D76818FA242F8FF900F45DFE /* Model */,
+				D76818F9242F8FE800F45DFE /* View */,
+				D76818F8242F8FE200F45DFE /* Presenter */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		D76818F8242F8FE200F45DFE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D76818FB242F926400F45DFE /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D76818F9242F8FE800F45DFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7681901242F9A9600F45DFE /* Cell */,
+				D76818FD242F984800F45DFE /* DetailViewController.swift */,
+				D76818FE242F984800F45DFE /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D76818FA242F8FF900F45DFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D76818E6242EC1AB00F45DFE /* Follower.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D7681901242F9A9600F45DFE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D7681906242F9C7B00F45DFE /* DetailCollectionViewCell.swift */,
+				D7681907242F9C7B00F45DFE /* DetailCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +257,10 @@
 			files = (
 				D76818D8242E7C9200F45DFE /* LaunchScreen.storyboard in Resources */,
 				D76818D5242E7C9200F45DFE /* Assets.xcassets in Resources */,
+				D7681900242F984800F45DFE /* DetailViewController.xib in Resources */,
+				D7681909242F9C7B00F45DFE /* DetailCollectionViewCell.xib in Resources */,
 				D76818D0242E7C8F00F45DFE /* Main.storyboard in Resources */,
+				D76818F3242F6A2000F45DFE /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +271,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76818FF242F984800F45DFE /* DetailViewController.swift in Sources */,
+				D76818EF242F56D400F45DFE /* NetworkService.swift in Sources */,
+				D76818F2242F6A2000F45DFE /* MainViewController.swift in Sources */,
 				D76818CD242E7C8F00F45DFE /* ViewController.swift in Sources */,
+				D76818E7242EC1AB00F45DFE /* Follower.swift in Sources */,
 				D76818D3242E7C8F00F45DFE /* GHUserList.xcdatamodeld in Sources */,
+				D76818EB242F4D5C00F45DFE /* MainPresenter.swift in Sources */,
+				D7681908242F9C7B00F45DFE /* DetailCollectionViewCell.swift in Sources */,
+				D76818E9242EC84000F45DFE /* AssemblyModelBuilder.swift in Sources */,
+				D76818ED242F565E00F45DFE /* User.swift in Sources */,
+				D76818E0242E801300F45DFE /* Router.swift in Sources */,
 				D76818C9242E7C8F00F45DFE /* AppDelegate.swift in Sources */,
 				D76818CB242E7C8F00F45DFE /* SceneDelegate.swift in Sources */,
+				D76818FC242F926400F45DFE /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
