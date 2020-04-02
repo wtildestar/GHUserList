@@ -16,7 +16,7 @@ protocol MainViewProtocol: class {
 protocol MainViewPresenterProtocol: class {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: Router)
     func getUsers()
-    var users: [User]? { get set }
+//    var users: [User]? { get set }
     var user: User? { get set }
     var followers: [Follower]? { get }
     func tapOnTheUser(follower: Follower?)
@@ -32,7 +32,7 @@ class MainPresenter: MainViewPresenterProtocol {
     var userSearchUrl: String = "https://api.github.com/users?since=0"
     var networkService: NetworkServiceProtocol!
     var router: RouterProtocol?
-    var users: [User]?
+    var users = [User]()
     var user: User?
     var followers: [Follower]?
     var mainViewCell: MainViewCell!
@@ -49,12 +49,28 @@ class MainPresenter: MainViewPresenterProtocol {
     }
     
     func getUsers() {
-        networkService.getSearchUsers(url: userSearchUrl, completion: { [weak self] result in
+        networkService.getSearchUsers(url: userSearchUrl) { headerLinks in
+            if let nextPagePath = headerLinks["rel=\"next\""] {
+                self.nextLink = nextPagePath
+            }
+            
+            if let prevPage = headerLinks["rel=\"prev\""] {
+                self.prevLink = prevPage
+            }
+        }
+        
+//        networkService.downloadImage(from: userSearchUrl) { image in
+//            self.mainViewCell.userImageView.image = image
+//        }
+        
+        
+        
+        
+        /* getSearchUsers(url: userSearchUrl, completion: { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
                 case .success(let users):
-                    
 //                    self.users = users
                     self.view?.success()
                 case .failure(let error):
@@ -69,7 +85,9 @@ class MainPresenter: MainViewPresenterProtocol {
             if let prevPage = headerLinks["rel=\"prev\""] {
                 self.prevLink = prevPage
             }
-        }
+        } */
     }
+    
+    
     
 }

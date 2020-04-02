@@ -14,12 +14,29 @@ class MainViewCell: UITableViewCell {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     
-    var presenter: MainPresenter!
-    var networkService: NetworkService!
+    
+    var user: User? {
+        didSet {
+            userLabel.text = user?.login
+
+            if let imageData = user?.imageData {
+                userImageView.image = UIImage(data: imageData)
+            }
+        }
+    }
+    
+//    var presenter: MainPresenter! {
+//        didSet {
+//            userLabel.text = presenter.user?.login
+//        }
+//    }
+//    var networkService: NetworkService!
     
     // MARK: - View Controller
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
 //        func set(user: User) {
 //            downloadImage(fromURL: user.avatarUrl)
 //        }

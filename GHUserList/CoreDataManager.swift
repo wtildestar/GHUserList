@@ -12,7 +12,7 @@ struct CoreDataManager {
     static let shared = CoreDataManager()
     
     let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "UserListModels")
+        let container = NSPersistentContainer(name: "GHUserListModels")
         container.loadPersistentStores { (storeDescription, err) in
             if let err = err {
                 fatalError( "Loading of store failed: \(err)")
@@ -25,6 +25,7 @@ struct CoreDataManager {
         print("Trying to fetch users")
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
+//        let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
         
         do {
             let users = try context.fetch(fetchRequest)

@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		D76818C9242E7C8F00F45DFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818C8242E7C8F00F45DFE /* AppDelegate.swift */; };
 		D76818CB242E7C8F00F45DFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818CA242E7C8F00F45DFE /* SceneDelegate.swift */; };
-		D76818CD242E7C8F00F45DFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818CC242E7C8F00F45DFE /* ViewController.swift */; };
 		D76818D0242E7C8F00F45DFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76818CE242E7C8F00F45DFE /* Main.storyboard */; };
-		D76818D3242E7C8F00F45DFE /* GHUserList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D76818D1242E7C8F00F45DFE /* GHUserList.xcdatamodeld */; };
 		D76818D5242E7C9200F45DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D76818D4242E7C9200F45DFE /* Assets.xcassets */; };
 		D76818D8242E7C9200F45DFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76818D6242E7C9200F45DFE /* LaunchScreen.storyboard */; };
 		D76818E0242E801300F45DFE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76818DF242E801300F45DFE /* Router.swift */; };
@@ -31,15 +29,14 @@
 		D78B2F782431D1D100087239 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B2F762431D1D100087239 /* MainViewCell.swift */; };
 		D78B2F792431D1D100087239 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78B2F772431D1D100087239 /* MainViewCell.xib */; };
 		D78B2F7C24324D8C00087239 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B2F7B24324D8C00087239 /* CoreDataManager.swift */; };
+		D7D107B5243442E000329393 /* GHUserListModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7D107B3243442E000329393 /* GHUserListModels.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D76818C5242E7C8F00F45DFE /* GHUserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUserList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76818C8242E7C8F00F45DFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D76818CA242E7C8F00F45DFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D76818CC242E7C8F00F45DFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D76818CF242E7C8F00F45DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D76818D2242E7C8F00F45DFE /* GHUserList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GHUserList.xcdatamodel; sourceTree = "<group>"; };
 		D76818D4242E7C9200F45DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D76818D7242E7C9200F45DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D76818D9242E7C9200F45DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +57,7 @@
 		D78B2F762431D1D100087239 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 		D78B2F772431D1D100087239 /* MainViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
 		D78B2F7B24324D8C00087239 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D7D107B4243442E000329393 /* GHUserListModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GHUserListModels.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +98,8 @@
 				D76818F7242F8FCD00F45DFE /* DetailModule */,
 				D76818F6242F8C0800F45DFE /* Supporting files */,
 				D76818D9242E7C9200F45DFE /* Info.plist */,
-				D76818D1242E7C8F00F45DFE /* GHUserList.xcdatamodeld */,
+				D78B2F7B24324D8C00087239 /* CoreDataManager.swift */,
+				D7D107B3243442E000329393 /* GHUserListModels.xcdatamodeld */,
 			);
 			path = GHUserList;
 			sourceTree = "<group>";
@@ -155,7 +154,6 @@
 			children = (
 				D76818C8242E7C8F00F45DFE /* AppDelegate.swift */,
 				D76818CA242E7C8F00F45DFE /* SceneDelegate.swift */,
-				D76818CC242E7C8F00F45DFE /* ViewController.swift */,
 				D76818CE242E7C8F00F45DFE /* Main.storyboard */,
 				D76818D4242E7C9200F45DFE /* Assets.xcassets */,
 				D76818D6242E7C9200F45DFE /* LaunchScreen.storyboard */,
@@ -228,7 +226,6 @@
 		D78B2F7A24324D7600087239 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				D78B2F7B24324D8C00087239 /* CoreDataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -311,10 +308,9 @@
 				D76818FF242F984800F45DFE /* DetailViewController.swift in Sources */,
 				D76818EF242F56D400F45DFE /* NetworkService.swift in Sources */,
 				D76818F2242F6A2000F45DFE /* MainViewController.swift in Sources */,
-				D76818CD242E7C8F00F45DFE /* ViewController.swift in Sources */,
+				D7D107B5243442E000329393 /* GHUserListModels.xcdatamodeld in Sources */,
 				D78B2F7C24324D8C00087239 /* CoreDataManager.swift in Sources */,
 				D76818E7242EC1AB00F45DFE /* Follower.swift in Sources */,
-				D76818D3242E7C8F00F45DFE /* GHUserList.xcdatamodeld in Sources */,
 				D768190D2430824300F45DFE /* GHError.swift in Sources */,
 				D76818EB242F4D5C00F45DFE /* MainPresenter.swift in Sources */,
 				D7681908242F9C7B00F45DFE /* DetailCollectionViewCell.swift in Sources */,
@@ -524,13 +520,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D76818D1242E7C8F00F45DFE /* GHUserList.xcdatamodeld */ = {
+		D7D107B3243442E000329393 /* GHUserListModels.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D76818D2242E7C8F00F45DFE /* GHUserList.xcdatamodel */,
+				D7D107B4243442E000329393 /* GHUserListModels.xcdatamodel */,
 			);
-			currentVersion = D76818D2242E7C8F00F45DFE /* GHUserList.xcdatamodel */;
-			path = GHUserList.xcdatamodeld;
+			currentVersion = D7D107B4243442E000329393 /* GHUserListModels.xcdatamodel */;
+			path = GHUserListModels.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
