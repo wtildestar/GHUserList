@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol MainViewProtocol: class {
     func success()
@@ -16,7 +17,6 @@ protocol MainViewProtocol: class {
 protocol MainViewPresenterProtocol: class {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: Router)
     func getUsers()
-//    var users: [User]? { get set }
     var user: User? { get set }
     var followers: [Follower]? { get }
     func tapOnTheUser(follower: Follower?)
@@ -36,12 +36,13 @@ class MainPresenter: MainViewPresenterProtocol {
     var user: User?
     var followers: [Follower]?
     var mainViewCell: MainViewCell!
+    private let persistence = PersistenceService.shared
     
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: Router) {
         self.view = view
         self.networkService = networkService
         self.router = router
-        getUsers()
+//        getUsers()
     }
     
     func tapOnTheUser(follower: Follower?) {
@@ -49,8 +50,34 @@ class MainPresenter: MainViewPresenterProtocol {
     }
     
     func getUsers() {
-        networkService.getSearchUsers(url: userSearchUrl) { headerLinks in
-            if let nextPagePath = headerLinks["rel=\"next\""] {
+        
+        networkService.getSearchUsers(url: userSearchUrl, completion: { result in
+            switch result {
+            case .success(let data):
+                do {
+                    guard let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] else { return }
+                    let users: [User] = jsonArray.compactMap { [weak self] in
+                        guard
+                            let strongSelf = self,
+                            let login = $0["login"] as? String,
+                            let avatarUrl = $0["avatarUrl"] as? String
+                            else { return nil }
+                        
+                        let user = User(context: strongSelf.persistence.context)
+                        user.login = login
+                        user.avatarUrl = avatarUrl
+                        
+                        return user
+                    }
+                    print(users)
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }) { headerLinks in
+                if let nextPagePath = headerLinks["rel=\"next\""] {
                 self.nextLink = nextPagePath
             }
             
@@ -58,13 +85,6 @@ class MainPresenter: MainViewPresenterProtocol {
                 self.prevLink = prevPage
             }
         }
-        
-//        networkService.downloadImage(from: userSearchUrl) { image in
-//            self.mainViewCell.userImageView.image = image
-//        }
-        
-        
-        
         
         /* getSearchUsers(url: userSearchUrl, completion: { [weak self] result in
             guard let self = self else { return }
@@ -87,7 +107,5 @@ class MainPresenter: MainViewPresenterProtocol {
             }
         } */
     }
-    
-    
     
 }

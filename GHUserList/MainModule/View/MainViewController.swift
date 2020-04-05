@@ -16,7 +16,7 @@ class MainViewController: UIViewController, NSFetchedResultsControllerDelegate {
     var fetchingMore: Bool = false
     
     lazy var fetchedResultsController: NSFetchedResultsController<User> = {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let context = PersistenceService.shared.persistentContainer.viewContext
         let request: NSFetchRequest<User> = User.fetchRequest()
         request.sortDescriptors = [
             NSSortDescriptor(key: "login", ascending: true)
@@ -42,19 +42,22 @@ class MainViewController: UIViewController, NSFetchedResultsControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.users.removeAll()
-        title = "Users"
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        tableView.register(UINib(nibName: "MainViewCell", bundle: nil), forCellReuseIdentifier: "MainViewCell")
-//        presenter.users.removeAll()
-//        presenter.users = []
-//        self.users = []
-        presenter.users = CoreDataManager.shared.fetchUsers()
-//        presenter.users = []
-//        presenter.view?.success()
-//        tableView.reloadData()
-        print(presenter.users)
+        presenter.getUsers()
     }
+    
+//    private func clearData() {
+//        do {
+//            let context = CoreDataManager.shared.persistentContainer.viewContext
+//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+//            do {
+//                let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
+//                _ = objects.map{$0.map{context.delete($0)}}
+//                CoreDataManager.shared.saveContext()
+//            } catch let error {
+//                print("ERROR DELETING : \(error)")
+//            }
+//        }
+//    }
     
     func beginBatchFetch() {
         
@@ -100,13 +103,28 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.users.count
 //        return fetchedResultsController.sections![section].numberOfObjects
+//        if let count = fetchedResultsController.sections?.first?.numberOfObjects {
+//            return count
+//        }
+//        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewCell", for: indexPath) as! MainViewCell
-        let user = fetchedResultsController.object(at: indexPath)
+        
+//        if let user = fetchedResultsController.object(at: indexPath) as? User {
+////            cell.setPhotoCellWith(photo: user)
+//            cell.setUserCellWith(user: user)
+//        }
+        
+//        if let user = fetchedResultsController.object(at: indexPath) as? User {
+//            cell.setUserCellWith(user: user)
+//        }
+
+        
+//        let user = fetchedResultsController.object(at: indexPath)
 //        presenter.user = user
-        cell.user = user
+//        cell.user = user
         
 //        let user = presenter.users[indexPath.row]
 //        cell.user = user

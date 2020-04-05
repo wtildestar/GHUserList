@@ -10,9 +10,8 @@ import UIKit
 import CoreData
 
 protocol NetworkServiceProtocol {
-    func getSearchUsers(url: String, completion: @escaping (([String: String]) -> Void))
+    func getSearchUsers(url: String, completion: @escaping (Result<Data, NSError>) -> Void, completion2: @escaping (([String: String]) -> Void))
     func downloadImage(from urlString: String, completed: @escaping (UIImage?) -> Void)
-    //    func getUsers(completion: @escaping (Result<[User]?, Error>) -> Void)
 }
 
 class NetworkService: NetworkServiceProtocol {
@@ -47,7 +46,7 @@ class NetworkService: NetworkServiceProtocol {
         task.resume()
     }
     
-    func getSearchUsers(url: String, completion: @escaping (([String: String]) -> Void)) {
+    func getSearchUsers(url: String, completion: @escaping (Result<Data, NSError>) -> Void, completion2: @escaping (([String: String]) -> Void)) {
         guard let url = URL(string: url) else { return }
         
         var request = URLRequest(url: url)
@@ -59,10 +58,6 @@ class NetworkService: NetworkServiceProtocol {
                 print("Failed to download users:", error)
                 return
             }
-//            if error != nil {
-//                completion(.failure(.invalidData))
-//                return
-//            }
             
             if response != nil {
                 let httpResponse = response as! HTTPURLResponse
@@ -77,85 +72,15 @@ class NetworkService: NetworkServiceProtocol {
                     let cleanPath = components[0].trimmingCharacters(in: CharacterSet(charactersIn: "< >"))
                     dictionary[components[1]] = cleanPath
                 })
-                
-                // print(dictionary)
-                completion(dictionary)
+                completion2(dictionary)
             }
             
             if let data = data {
-                do {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let jsonUsers = try decoder.decode([JSONUser].self, from: data)
-//                    completion(.success(jsonUsers))
-//                    print(jsonUsers)
-                    
-                    let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-                    privateContext.parent = CoreDataManager.shared.persistentContainer.viewContext
-                    
-                    
-                    jsonUsers.forEach { jsonUser in
-//                        do {
-//                            try privateContext.delete(user)
-//                        }
-                        
-                        print(jsonUser.login)
-                        let user = User(context: privateContext)
-                        user.login = jsonUser.login
-                        
-//                        print(user) 
-//                        user.imageData = jsonUser.avatarUrl
+                
+                completion(.success(data))
 
-                        
-//                        jsonUser.employees?.forEach({ (jsonEmployee) in
-//                            print("  \(jsonEmployee.name)")
-//                            let employee = Employee(context: privateContext)
-//                            employee.name = jsonEmployee.name
-//                            employee.type = jsonEmployee.type
-//
-//                            let employeeInformation = EmployeeInformation(context: privateContext)
-//                            let birthdayDate = dateFormatter.date(from: jsonEmployee.birthday)
-//                            employeeInformation.birthday = birthdayDate
-//                            employee.employeeInformation = employeeInformation
-//                            employee.company = user
-//                        })
-                        
-                        do {
-                            try privateContext.save()
-                            try privateContext.parent?.save()
-                            
-                        } catch let saveErr {
-                            print("Failed to save users:", saveErr)
-                        }
-                    }
-                    
-                } catch let jsonDecoderErr {
-//                    completion(.failure(.invalidData))
-                    print("Failed to decode:", jsonDecoderErr)
-                }
             }
             
         }.resume()
     }
-    //
-    //    func getUsers(completion: @escaping (Result<[User]?, Error>) -> Void) {
-    ////        let urlString = "https://api.github.com/search/users?q=page&s=updated"
-    //        let urlString = "https://api.github.com/users?since=0"
-    //        guard let url = URL(string: urlString) else { return }
-    //
-    //        URLSession.shared.dataTask(with: url) { data, _, error in
-    //            if let error = error {
-    //                completion(.failure(error))
-    //                return
-    //            }
-    //
-    //            do {
-    //                let obj = try JSONDecoder().decode([User].self, from: data!)
-    //                completion(.success(obj))
-    //                print(obj)
-    //            } catch {
-    //                completion(.failure(error))
-    //            }
-    //        }.resume()
-    //    }
 }
