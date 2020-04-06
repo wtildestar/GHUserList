@@ -15,15 +15,15 @@ class MainViewCell: UITableViewCell {
     @IBOutlet weak var userLabel: UILabel!
     
     
-//    var user: User? {
-//        didSet {
-//            userLabel.text = user?.login
-//
-////            if let imageData = user?.imageData {
-////                userImageView.image = UIImage(data: imageData)
-////            }
-//        }
-//    }
+    var user: User? {
+        didSet {
+            userLabel.text = user?.login
+
+//            if let imageData = user?.imageData {
+//                userImageView.image = UIImage(data: imageData)
+//            }
+        }
+    }
     
     func setUserCellWith(user: User) {
         

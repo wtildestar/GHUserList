@@ -43,6 +43,15 @@ class MainViewController: UIViewController, NSFetchedResultsControllerDelegate {
         super.viewDidLoad()
         
         presenter.getUsers()
+        tableView.register(UINib(nibName: "MainViewCell", bundle: nil), forCellReuseIdentifier: "MainViewCell")
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("PersistedDataUpdated"), object: nil, queue: .main) { _ in
+            
+        }
+        presenter.persistence.fetch(User.self) { [weak self] users in
+            guard let self = self else { return }
+            self.presenter.users = users
+            self.presenter.view?.success()
+        }
     }
     
 //    private func clearData() {
@@ -126,8 +135,8 @@ extension MainViewController: UITableViewDataSource {
 //        presenter.user = user
 //        cell.user = user
         
-//        let user = presenter.users[indexPath.row]
-//        cell.user = user
+        let user = presenter.users[indexPath.row]
+        cell.user = user
         
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewCell", for: indexPath) as! MainViewCell
 //        tableView.register(UINib(nibName: "MainViewCell", bundle: nil), forCellReuseIdentifier: "MainViewCell")
