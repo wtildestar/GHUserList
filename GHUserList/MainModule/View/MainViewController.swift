@@ -75,12 +75,7 @@ class MainViewController: UIViewController, NSFetchedResultsControllerDelegate {
         print("Begin batch fetch..")
         
 //        presenter.networkService.get
-        
-        
-        
-        
-        
-        
+     
        /* getSearchUsers(url: nextLink, completion: { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
