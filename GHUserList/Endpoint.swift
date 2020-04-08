@@ -9,12 +9,11 @@
 import Foundation
 import CoreData
 
-enum Endpoint: String {
-    case users = "https://api.github.com/users?since=0"
-    
-    var responseType: NSManagedObject.Type {
+enum Endpoint<T: NSManagedObject> {
+    case users
+    var url: String {
         switch self {
-        case .users: return User.self
+        case .users: return "https://api.github.com/users?since=0"
         }
     }
 }

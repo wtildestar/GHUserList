@@ -16,7 +16,7 @@ protocol MainViewProtocol: class {
 
 protocol MainViewPresenterProtocol: class {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: Router)
-    func getUsers()
+    func getUsers(completion: @escaping ([User]) -> Void)
     var user: User? { get set }
     var followers: [Follower]? { get }
     func tapOnTheUser(follower: Follower?)
@@ -49,7 +49,7 @@ class MainPresenter: MainViewPresenterProtocol {
         router?.showDetail(follower: follower)
     }
     
-    func getUsers() {
+    func getUsers(completion: @escaping ([User]) -> Void) {
         
         networkService.getSearchUsers(url: userSearchUrl, completion: { result in
             switch result {
@@ -57,22 +57,23 @@ class MainPresenter: MainViewPresenterProtocol {
                 do {
                     guard let jsonArray = try JSONSerialization.jsonObject(with: data, options: [])
                         as? [[String: Any]] else { return }
-                    let users: [User] = jsonArray.compactMap { [weak self] in
+                    jsonArray.forEach { [weak self] in
                         guard
                             let strongSelf = self,
                             let login = $0["login"] as? String,
                             let avatarUrl = $0["avatar_url"] as? String
-                            else { return nil }
+                            else { return }
 
                         let user = User(context: strongSelf.persistence.context)
                         user.login = login
                         user.avatarUrl = avatarUrl
-
-                        return user
                     }
-                    self.users = users
                     DispatchQueue.main.async {
-                        self.persistence.save()
+                        self.persistence.save() {
+                            self.persistence.fetch(User.self) { objects in
+                                completion(objects)
+                            }
+                        }
                     }
                 } catch {
                     print(error)

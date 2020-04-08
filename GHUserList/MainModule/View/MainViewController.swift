@@ -14,6 +14,7 @@ class MainViewController: UIViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     var presenter: MainPresenter!
     var fetchingMore: Bool = false
+//    let store = DataStore.shared
     
     lazy var fetchedResultsController: NSFetchedResultsController<User> = {
         let context = PersistenceService.shared.persistentContainer.viewContext
@@ -42,16 +43,15 @@ class MainViewController: UIViewController, NSFetchedResultsControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.getUsers()
+//        presenter.getUsers()
         tableView.register(UINib(nibName: "MainViewCell", bundle: nil), forCellReuseIdentifier: "MainViewCell")
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("PersistedDataUpdated"), object: nil, queue: .main) { _ in
-            
-        }
-        presenter.persistence.fetch(User.self) { [weak self] users in
+        
+        presenter.getUsers { [weak self] users in
             guard let self = self else { return }
             self.presenter.users = users
             self.presenter.view?.success()
         }
+        
     }
     
 //    private func clearData() {
