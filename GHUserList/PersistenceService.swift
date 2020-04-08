@@ -43,12 +43,12 @@ struct PersistenceService {
     
     // MARK: - Core Data Saving support
     
-    func save() {
+    func save(completion: @escaping () -> Void) {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
-                NotificationCenter.default.post(name: NSNotification.Name("PersistedDataUpdated"), object: nil)
+                completion()
             } catch {
                 
                 let nserror = error as NSError

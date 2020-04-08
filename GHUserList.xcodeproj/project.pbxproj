@@ -29,6 +29,8 @@
 		D789173924393C45003AD425 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D789173824393C45003AD425 /* Extensions.swift */; };
 		D7891750243A4324003AD425 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D789174E243A4324003AD425 /* User+CoreDataClass.swift */; };
 		D7891751243A4324003AD425 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D789174F243A4324003AD425 /* User+CoreDataProperties.swift */; };
+		D7891754243E4255003AD425 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7891753243E4255003AD425 /* DataStore.swift */; };
+		D7891756243E4630003AD425 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7891755243E4630003AD425 /* Endpoint.swift */; };
 		D78B2F782431D1D100087239 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B2F762431D1D100087239 /* MainViewCell.swift */; };
 		D78B2F792431D1D100087239 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78B2F772431D1D100087239 /* MainViewCell.xib */; };
 		D78B2F7C24324D8C00087239 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B2F7B24324D8C00087239 /* PersistenceService.swift */; };
@@ -60,6 +62,8 @@
 		D789173824393C45003AD425 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D789174E243A4324003AD425 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D789174F243A4324003AD425 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D7891753243E4255003AD425 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		D7891755243E4630003AD425 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D78B2F762431D1D100087239 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 		D78B2F772431D1D100087239 /* MainViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
 		D78B2F7B24324D8C00087239 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				D76818D9242E7C9200F45DFE /* Info.plist */,
 				D78B2F7B24324D8C00087239 /* PersistenceService.swift */,
 				D789173824393C45003AD425 /* Extensions.swift */,
+				D7891753243E4255003AD425 /* DataStore.swift */,
+				D7891755243E4630003AD425 /* Endpoint.swift */,
 			);
 			path = GHUserList;
 			sourceTree = "<group>";
@@ -329,12 +335,14 @@
 				D78B2F7C24324D8C00087239 /* PersistenceService.swift in Sources */,
 				D76818E7242EC1AB00F45DFE /* Follower.swift in Sources */,
 				D768190D2430824300F45DFE /* GHError.swift in Sources */,
+				D7891756243E4630003AD425 /* Endpoint.swift in Sources */,
 				D76818EB242F4D5C00F45DFE /* MainPresenter.swift in Sources */,
 				D7681908242F9C7B00F45DFE /* DetailCollectionViewCell.swift in Sources */,
 				D76818E9242EC84000F45DFE /* AssemblyModelBuilder.swift in Sources */,
 				D7891751243A4324003AD425 /* User+CoreDataProperties.swift in Sources */,
 				D76818ED242F565E00F45DFE /* User.swift in Sources */,
 				D76818E0242E801300F45DFE /* Router.swift in Sources */,
+				D7891754243E4255003AD425 /* DataStore.swift in Sources */,
 				D76818C9242E7C8F00F45DFE /* AppDelegate.swift in Sources */,
 				D78B2F782431D1D100087239 /* MainViewCell.swift in Sources */,
 				D7891750243A4324003AD425 /* User+CoreDataClass.swift in Sources */,
